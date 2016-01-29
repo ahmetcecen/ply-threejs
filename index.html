@@ -70,6 +70,8 @@
 			
 			var windowHalfX = window.innerWidth / 2;
 			var windowHalfY = window.innerHeight / 2;
+			
+			var surface;
 
 
 			init();
@@ -91,16 +93,17 @@
 				// PLY file
 
 				var loader = new THREE.PLYLoader();
-				loader.load( 'models/test5.ply', function ( geometry ) {
+				mesh=loader.load( 'models/test5.ply', function ( geometry ) {
 
 					var material = new THREE.MeshPhongMaterial( { color: 0x0055ff, specular: 0x111111, shininess: 200 } );
 					var mesh = new THREE.Mesh( geometry, material );
 
 					mesh.scale.set( 0.1, 0.1, 0.1 );
+					
+					surface = mesh;
+					console.log(surface);
 
 					scene.add( mesh );
-					
-					return mesh
 				} );
 
 				// Lights
