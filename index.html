@@ -211,7 +211,7 @@
 
 			function render() {		
 				
-				plane.rotation.y = mesh.rotation.y += ( targetRotation - mesh.rotation.y ) * 0.05;
+				plane.rotation.y = surface.rotation.y += ( targetRotation - surface.rotation.y ) * 0.05;
 				renderer.render( scene, camera );
 
 			}
